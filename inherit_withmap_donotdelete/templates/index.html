@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+ <div class="panel panel-default">
+             <div class="panel-heading">WELCOME!</div>
+             <div class="panel-body">
+			   <p style="text-align:justify">&nbsp &nbsp Here at Movie Recommendations we use machine learning to generate personalized recommendations for you based on the movies you like. To get your recommendations
+			   create a profile and begin rating movies. The more feedback you give us the better we can tailor our recommendations to your personal tasts. We employ a technique known as collaborative filtering to make predict which movies you'll enjoy the most. By comparing your taste profile 
+			   to those of other users in our database, our deep neural network looks at what movies people with similar tastes enjoyed and recommends movies
+			   that similar users rate highly.</p>
+			   <br>
+			   <p style="text-align:justify">&nbsp &nbsp Although we compare ratings submitted by many users to generate our recommendations, your data remains private and no one else can see your
+			   profile or ratings. Your password is stored in encrypted form, and we will never share your data with anyone.</p>
+			   <br>
+			   <img src="https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/movietheater-screen-seats-700x396.jpg">
+			   <br>
+			   <br>
+			   
+			   {% if not user %}
+			   <a href={{url_for('register')}} style="color:#FFFFFF">Ready to get started? Click here to register</a>
+			   {% endif %}
+			   
+			 
+			 
+			 
+			 
+			 </div>
+		 </div>
+
+{% endblock %}
+

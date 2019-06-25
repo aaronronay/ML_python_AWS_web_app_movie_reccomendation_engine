@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="panel panel-default">
+             <div class="panel-heading">REGISTER NOW</div>
+             <div class="panel-body">
+			   <form method=POST action="{{url_for('register')}}">
+	    <div class="form-group">
+		  <label for="exampleInputEmail">Username</label>
+		  <input type="text" class="form-control" name="username" placeholder="Username">
+		</div>
+		<div class="form-group">
+		  <label for="exampleInputPassword">Password</label>
+		  <input type="password" class="form-control" name="pass" placeholder="Password">
+		</div>
+		 <div class="form-group">
+		  <label for="exampleInputEmail">Zipcode</label>
+		  <input type="text" class="form-control" name="zip" placeholder="Zipcode">
+		</div>
+		<button type="submit" class="btn btn-primary btn-block">Register</button>
+	  </form>
+	  
+	  
+
+{% endblock %}

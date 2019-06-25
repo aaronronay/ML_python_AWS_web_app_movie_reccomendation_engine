@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="panel panel-default">
+<div class="panel-heading">RATINGS</div>
+<div class="panel-body">
+
+<h5 style="color:#FFFFFF">Search Movies</h5>
+<form method=POST action="{{url_for('search')}}">
+            <div class="form-group">
+              <input type="text" name="title" placeholder="Movie Title" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+          </form>
+		  <hr>
+	{% if not_found %}
+	<h5>Sorry, can't find that title. Please try another.</h5>
+	{% endif %}
+	
+	{% if found %}
+	<!-- <h5>Rate {{movie_title}}</h5> -->
+	
+	<form method=POST action="{{url_for('rate')}}">
+	
+	<label for="input-1" class="control-label">Rate {{movie_title}}</label>
+	<input id="input-1" name="movieRating" class="rating rating-loading" data-min="1" data-max="5" data-step="1">
+	<input type="hidden" name="movieTitle" value="{{movie_title}}">
+	<input type="hidden" name="movieNumber" value="{{movie_number}}">
+	<button type="submit" class="btn btn-primary btn-block">Submit Rating</button>
+	</form>
+	{% endif %}
+	
+
+
+{% endblock %}
